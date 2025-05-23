@@ -1,52 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <title>Contact form</title>
+  </head>
+  <body>
+    <form id="contactForm" class="container" action="/contact" method="get" novalidate>
+      <h1>Contact Us</h1>
+      <div class="row">
+        <fieldset>
+          <label for="fname">First name <span>*</span></label
+          ><br />
+          <input type="text" id="fname" name="firstName" class="form-control" />
+          <div class="message-error">This field is required</div>
+        </fieldset>
+        <fieldset>
+          <label for="lname">Last name <span>*</span></label
+          ><br />
+          <input type="text" id="lname" name="lastName" class="form-control" />
+          <div class="message-error">This field is required</div>
+        </fieldset>
+      </div>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Contact form</title>
+      <div class="row">
+        <fieldset>
+          <label for="email">Email Address <span>*</span></label
+          ><br />
+          <input type="text" id="email" name="email" class="form-control" />
+          <div class="message-error">Please enter a valid email address.</div>
+        </fieldset>
+      </div>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+      <label class="custom-radio-mobile">Query Type <span>*</span></label>
+      <div class="row">
+        <fieldset class="form-label">
+          <label class="custom-radio">
+            <input type="radio" name="queryType" value="generalEnquiry" class="form-radio" />
+            <span class="icon"></span>General Enquiry
+          </label>
+          <label class="custom-radio">
+            <input type="radio" name="queryType" value="supportRequest" class="form-radio" />
+            <span class="icon"></span>Support Request
+          </label>
+          <div class="message-error">Please select a query type</div>
+        </fieldset>
+      </div>
 
-  Contact Us
+      <div class="row">
+        <fieldset>
+          <label for="message-user">Message <span>*</span></label
+          ><br />
+          <textarea id="message-user" name="message" rows="5" class="form-control"></textarea> <br />
+          <div class="message-error">This field is required</div>
+        </fieldset>
+      </div>
 
-  First Name
-  This field is required
+      <div class="row">
+        <fieldset>
+          <label class="custom-checkbox">
+            <input type="checkbox" name="consent" class="form-control form-checkbox" /><span class="icon"></span> I
+            consent to being contacted by the team
+            <span>*</span>
+          </label>
+          <div class="message-error">To submit this form, please consent to being contacted</div>
+        </fieldset>
+      </div>
 
-  Last Name
-  This field is required
+      <div class="row">
+        <input type="submit" class="submit" value="Submit" />
+      </div>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
-
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
-
-  Message
-  This field is required
-
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <div class="message-success">
+        <span class="icon"></span>
+        <h3>Message Sent!</h3>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
+    </form>
+    <script src="script.js"></script>
+  </body>
 </html>
